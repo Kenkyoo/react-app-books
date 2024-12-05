@@ -1,6 +1,14 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const Card = ({key, title, author, image, year}) => {
+interface CardProps  {
+  key: string;
+  title: string;
+  author: string;
+  image: string;
+  year: string;
+}
+
+const Card = ({key, title, author, image, year} : CardProps) => {
   return (
     <div key={key} className="col">      
       <div className="card">

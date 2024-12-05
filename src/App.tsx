@@ -4,9 +4,23 @@ import axios from 'axios';
 import './styles.scss'
 import Card from './Card';
 
+type BooksProps = {
+  q: string;
+  numFound: string;
+  docs: Book[];
+}
+
+type Book = {
+  title: string;
+  author_name: string;
+  publish_year: string;
+  _version_: string;
+  cover_edition_key: string;
+};
+
 function App() {
   const [query, setQuery] = useState('');
-  const [booksData, setBooksData] = useState(null);
+  const [booksData, setBooksData] = useState<BooksProps | null>(null);
 
   const fetchData = async () => {
     try {
@@ -24,11 +38,11 @@ function App() {
     fetchData();
   }, []);
   
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     fetchData();
   };
