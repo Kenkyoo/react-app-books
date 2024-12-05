@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# Book Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicación web que permite buscar libros utilizando la API de OpenLibrary. Los resultados se muestran en una interfaz simple y fácil de usar.
 
-Currently, two official plugins are available:
+## Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Librería para construir interfaces de usuario.
+- **Vite**: Herramienta de desarrollo para aplicaciones modernas de JavaScript.
+- **Axios**: Librería para hacer peticiones HTTP.
+- **Bootstrap**: Framework CSS para diseño responsivo.
+- **Sass**: Preprocesador CSS para un estilo más organizado.
 
-## Expanding the ESLint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Búsqueda de libros por título.
+- Visualización de los resultados con título, autor, año de publicación y portada.
+- Soporta la búsqueda de múltiples resultados.
 
-- Configure the top-level `parserOptions` property like this:
+## Instalación
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Para instalar y correr la aplicación localmente, sigue estos pasos:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clona este repositorio:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   git clone https://github.com/Kenkyoo/react-app-books.git
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    Navega a la carpeta del proyecto:
+
+cd react-app-books
+
+Instala las dependencias:
+
+npm install
+
+Inicia el servidor de desarrollo:
+
+    npm run dev
+
+    La aplicación estará disponible en http://localhost:3000.
+
+Uso
+
+    Ingresa el título del libro que deseas buscar en el campo de entrada.
+    Haz clic en el botón Submit o presiona Enter.
+    Los resultados de búsqueda aparecerán debajo del formulario, mostrando la información del libro, incluyendo el título, autor, año de publicación y la portada.
+
+Estructura del Proyecto
+
+/src
+  /assets
+  /components
+    Card.tsx
+  App.tsx
+  /styles
+    styles.scss
+  /types
+    Book.ts
+
+Contribución
+
+Si deseas contribuir a este proyecto, por favor abre un Issue o realiza un Pull Request con tus cambios.
+Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
